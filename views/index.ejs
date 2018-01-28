@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <input type="text" id="content" name="content">
+    <input type="submit" id="send" value="儲存"> 
+    <ul id="list">
+      <% for(item in todoList){ %>
+        <li>
+            <span><%- todoList[item].content %></span>
+            <button class='remove' data-key="<%= item %>">移除</button>
+        </li>
+      <% } %>
+    </ul>
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>
